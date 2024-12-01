@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>The CookBook</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="img/logo4.png" class="brand-name">
+            <a href="# " class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Gulab-Jamun.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Gulab-Jamun</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Dhokla.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Dhokla</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Samosa.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>samosas</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Omelette.webp">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Omelette</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Golgappe.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Golgappe </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Idli.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Idli</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Biryani-rice.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Biryani-rice </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Burger.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Chicken Burger</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/jalebi.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>jalebi</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/Pav-Bhaji.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Pav-Bhaji</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="./img/vada-pav.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>vada-pav</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Gulab-Jamun</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Gulab Jamun is a popular Indian dessert made from deep-fried milk-based dough balls soaked in a sugar syrup flavored with rose water, cardamom, or saffron. The name "Gulab Jamun" comes from Persian, where Gulab means "rose" (referring to the rose-scented syrup) and Jamun refers to a type of Indian fruit that resembles the dessert in shape and size. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br><br> 1.Khoa or Khoya: Reduced milk solids that form the base of the dough. Khoya is prepared by simmering milk until it thickens. Alternatively, milk powder can also be used  <br> 2.All-purpose flour (maida): Used to bind the dough and give structure. <br>3. Sugar: For the syrup, which sweetens and flavors the dessert.  <br>4. Rose water, cardamom, or saffron: These flavor enhancers are added to the syrup. <br>5. Ghee or oil: For deep-frying the dough balls. </p>
+                        <h3>Instruction:</h3>
+                        <p> <br>1.  The dough is made by mixing khoya, a small amount of flour, and sometimes a bit of baking powder to make it soft and smooth. <br>2. Small balls are formed, taking care to ensure there are no cracks, as these can cause the balls to break apart during frying. <br>3. The dough balls are fried on low to medium heat until they turn golden brown
+                            <br>4. After frying, the balls are immediately soak it in warm sugar syrup, which allows them to absorb the flavors and become soft and juicy. </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Gulab-Jamun.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/ethrkxKWW4c?si=H7jCc-Ubehlmo2Jd" class="meal-link-btn">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dhokla</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Dhokla is a popular vegetarian dish from the Indian state of Gujarat. It is a savory, steamed snack made from a fermented batter of rice and chickpea flour (besan) or lentils. Light and fluffy in texture, dhokla is enjoyed as a breakfast item, snack, or even a side dish.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br> 1.  Gram flour (besan) - 1 cup<br> 2. Yogurt (curd) - ½ cup (optional, for slight tanginess) <br>3. Water - to adjust the consistency of the batter
+                           <br>4. Sugar - 1 to 2 teaspoons (to balance the flavors) <br>5. Turmeric powder - ¼ teaspoon (for color)<br>6. Ginger-green chili paste - 1 teaspoon (for flavor) <br>7. salt  - to taste <br>8. Lemon juice - 1 to 2 tablespoons (to add tanginess) <br>9. Eno fruit salt or baking soda - 1 teaspoon (leavening agent, to make the dhokla soft and fluffy) <br>10.For Tempering (Tadka) <br>11.Oil - 1 to 2 tablespoons
+                           <br>12. Mustard seeds - 1 teaspoon <br>13.Cumin seeds (optional) - ½ teaspoon <br>14.Green chilies - sliced, 2 to 3 <br>15. Curry leaves - a few <br>16. Asafoetida (hing) - a pinch (optional) <br>17.Sesame seeds (optional) - 1 teaspoon <br>18.Water - ¼ cup (for pouring over the dhokla)<br>19.Sugar - 1 to 2 teaspoons (for the tempering liquid)  </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Batter: Traditionally, the batter is prepared by soaking rice and split chickpeas (chana dal) or using gram flour (besan) mixed with water and left to ferment overnight. Alternatively, ready-made besan is often used to make an instant version. <br>2. Fermentation: The batter is fermented with yogurt, which gives the dhokla a tangy flavor. Leavening agents such as baking soda or Eno fruit salt are added to help the batter rise during steaming.
+                            <br>3. Steaming: The batter is poured into a greased tray or mold and steamed until it is cooked through. The result is a soft and spongy cake-like dish. <br>4.  Tempering: Once steamed, dhokla is tempered with a mixture of mustard seeds, green chilies, curry leaves, sesame seeds, and a bit of oil. <br>5.  It is often garnished with freshly grated coconut and chopped coriander leaves.  <br>6 . Serve hot. Share and enjoy! </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Dhokla.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/cSs77CQh3FI?si=cwD_IjTiAsScfyT2" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Samosa</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Samosa is a popular and delicious deep-fried snack that is widely enjoyed in South Asia and other parts of the world. It is known for its crispy, flaky pastry exterior and savory filling, usually made with spiced potatoes and peas. Samosas are often served with chutneys and make for a tasty appetizer or snack.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>For the Dough (Outer Pastry)<br>1. All-purpose flour (maida) - 2 cups<br>2. Carom seeds (ajwain) - ½ teaspoon (optional, for flavor)
+                            <br>3. Salt - to taste<br>4. Ghee or oil - 4 to 5 tablespoons (for making the dough flaky)<br>5. Water - as needed to knead the dough For the Filling<br>6. Potatoes - 4 to 5 medium-sized, boiled and mashed<br>7. Green peas - ½ cup (optional) <br>8. Cumin seeds - 1 teaspoon<br>9. Ginger - 1 teaspoon, grated or finely chopped<br>10.Green chilies - 2, finely chopped (adjust to taste) <br>11.Coriander powder - 1 teaspoon <br>12.Garam masala - ½ teaspoon <br>13. Amchur (dry mango powder) - ½ teaspoon (for tanginess; can substitute with lemon juice) <br>14.Red chili powder - ½ teaspoon (optional, for heat) <br>15.Turmeric powder - ¼ teaspoon <br>15.Salt - to taste <br>15.Fresh coriander leaves - finely chopped <br>16. Oil - for cooking the filling and for deep frying the samosas  </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Making the Dough<br>1.  In a mixing bowl, combine all-purpose flour, salt, and carom seeds.
+                            Add ghee or oil and rub it into the flour until it resembles coarse crumbs. Gradually add water and knead into a firm and smooth dough. Cover with a damp cloth and set aside to rest for 20-30 minutes. <br>2. Preparing the Filling : Heat oil in a pan and add cumin seeds. Let them splutter. Add grated ginger and chopped green chilies, sautéing for a few seconds.Add boiled and mashed potatoes, green peas, turmeric powder, coriander powder, garam masala, red chili powder, amchur, and salt. Mix well and cook for a few minutes until the spices are well combined. Add chopped coriander leaves, mix, and let the filling cool. <br>3. Assembling the Samosas Divide the dough into equal-sized balls and roll each one into a thin oval shape. Cut the oval in half to form two semi-circles. Take one semi-circle and fold it into a cone, sealing the edges with a little water. Fill the cone with the potato mixture and seal the top edge tightly, making sure there are no gaps. Repeat with the remaining dough and filling.<br> 4. Frying the Samosas:  Heat oil in a deep frying pan over medium heat. Fry the samosas in batches on medium-low heat until they turn golden brown and crispy. Avoid frying on high heat to ensure the pastry cooks evenly.  Drain on paper towels to remove excess oil.   </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Samosa.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/IEdVmXpjGcI?si=Gu0mLcJFv6l-GpNG" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Omelette</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">In cuisine, an omelette is a dish made from beaten eggs, fried with butter or oil in a frying pan. It is quite common for the omelette to be folded around fillings such as chives, vegetables, mushrooms, meat, cheese, onions or some combination of the above. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1.  3 eggs, beaten <br>2. 1 tsp sunflower oil<br>3. 1 tsp butter</p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Beat the eggs: Use two or three eggs per omelette, depending on how hungry you are. Beat the eggs lightly with a fork. <br>2. Melt the butter: Use an 8-inch nonstick skillet for a 2-egg omelette, a 9-inch skillet for 3 eggs. Melt the butter over medium-low heat, and keep the temperature low and slow when cooking the eggs so the bottom doesn’t get too brown or overcooked. <br>3. Add the eggs: Let the eggs sit for a minute, then use a heatproof silicone spatula to gently lift the cooked eggs from the edges of the pan. Tilt the pan to allow the uncooked eggs to flow to the edge of the pan <br>4. Fill the omelette: Add the filling—but don’t overstuff the omelette—when the eggs begin to set. Cook for a few more seconds <br>5. Fold and serve: Fold the omelette in half. Slide it onto a plate with the help of a silicone spatula.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Omelette.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/bde4yd4u" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Golgappe</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about"> Golgappa, also known as pani puri or puchka, is a popular street food snack in India, enjoyed for its burst of flavors and crispy texture. The dish consists of small, round, and crispy hollow puris filled with a spicy, tangy, and flavorful water, along with a savory filling. Golgappa is a must-try experience for anyone exploring Indian cuisine.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3> <p><br>1.Semolina (sooji/rava) - 1 cup <br>2.All-purpose flour (maida) - 2 tablespoons (optional, for binding) <br>3.Salt - a pinch <br>4.Water - as needed to knead the dough <br>5.Oil - for deep frying <br>For the Spicy Water (Pani)<br>6. Mint leaves - 1 cup <br>7.Coriander leaves - ½ cup <br>8.Green chilies - 2 to 3 (adjust to taste) <br>8.Tamarind pulp - 2 to 3 tablespoons <br>9.Black salt - 1 teaspoon <br>10.Roasted cumin powder - 1 teaspoon <br>11.Chaat masala - 1 teaspoon <br>12.Salt - to taste <br>13.Cold water - 4 to 5 cups <br>14.Boondi (optional) - a handful for added crunch <br>For the Filling<br>15. Boiled potatoes - 2 to 3, peeled and mashed <br>16.Boiled chickpeas - ½ cup <br>17.Chaat masala - 1 teaspoon <br>18.Red chili powder - ½ teaspoon (optional)<br>19. Salt - to taste <br>20.Fresh coriander leaves - finely chopped (for garnish)     </p>
+                        <h3>Instruction:</h3>
+                        <p><br> 1.Making the Puris
+                            <br>Prepare the Dough: In a large mixing bowl, combine semolina, all-purpose flour (if using), and a pinch of salt. Gradually add water and knead into a stiff dough. Cover the dough with a damp cloth and let it rest for 20-30 minutes.
+                            <br>2. Rolling Out the Puris: Divide the dough into small balls. Roll each ball into thin, even circles (about 2 inches in diameter). Ensure they are thin so they puff up well. <br>3.Frying the Puris: Heat oil in a deep frying pan over medium heat. Once the oil is hot, carefully add the rolled puris, a few at a time. Fry them until they puff up and turn golden brown. Remove and drain on paper towels. Let the puris cool completely and store them in an airtight container. <br>4. Making the Spicy Water (Pani)Blend the Herbs and Spices: In a blender, add mint leaves, coriander leaves, green chilies, and tamarind pulp. Blend to a smooth paste, using a little water if needed. <br>5. Season the Water: Transfer the paste to a large bowl and add black salt, roasted cumin powder, chaat masala, regular salt, and 4 to 5 cups of cold water. Mix well and adjust seasoning to taste. Chill the water in the refrigerator for at least an hour before serving. Add boondi to the water just before serving, if desired.  <br>6. Preparing the Filling  Mix the Ingredients: In a bowl, combine mashed boiled potatoes, boiled chickpeas, chaat masala, red chili powder (if using), and salt. Mix well and adjust seasoning as needed. Garnish with chopped coriander leaves.   </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Golgappe.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/uNcIRI9tKYk?si=LaTwGhvTU0MSeDHv" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Idli</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Idli is a traditional South Indian breakfast dish that is soft, fluffy, and steamed. It is made from a fermented batter of rice and urad dal (black gram lentils). Idlis are known for their light, airy texture and are considered healthy, as they are low in fat and easily digestible. Idli is often served with accompaniments like coconut chutney, sambar, or a variety of chutneys and spicy powders.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br> <br>1. Idli rice - 2 cups (short-grain rice specifically used for making idlis)<br>2.Urad dal (split and dehusked black gram) - 1 cup <br>3.Fenugreek seeds (methi seeds) - ½ teaspoon (optional, for aiding fermentation) <br>4.Salt - to taste   <br>5.Water - as needed for soaking and grinding </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Soaking the Ingredients<br>Soak the Rice: Rinse the idli rice a few times until the water runs clear. Soak the rice in enough water for at least 4 to 6 hours. Soak the Urad Dal: Rinse the urad dal a few times and soak it in enough water along with the fenugreek seeds for at least 4 to 6 hours. <br> 2. Grinding the Batter Grind the Urad Dal: Drain the soaked urad dal and fenugreek seeds. Grind them in a wet grinder or a high-speed blender until you get a smooth and fluffy batter. Add water gradually as needed to achieve a light and airy consistency. <br> Grind the Rice: Drain the soaked rice and grind it to a slightly coarse batter (a little grainy in texture) using a little water. The rice batter should not be too smooth.  <br>Mix the Batters: Combine the ground urad dal and rice batter in a large mixing bowl. Add salt and mix well, preferably with your hands, to help with the fermentation process.<br> 3. Fermenting the BatterFermentation: Cover the bowl with a lid and let the batter ferment in a warm place for 8 to 12 hours or overnight. The batter should rise and become airy and slightly tangy. The duration of fermentation depends on the room temperature; it may take longer in colder climates.<br>4. Steaming the Idlis  Prepare the Idli Molds: Grease the idli molds or plates lightly with oil to prevent sticking. Pour the Batter: Gently stir the fermented batter and pour it into the greased idli molds, filling each mold about ¾ full.<br>Steam the Idlis: Place the idli molds in a steamer or pressure cooker without the whistle. Steam on medium heat for 10 to 12 minutes or until a toothpick inserted into an idli comes out clean.
+                            <br>Remove and Cool: Once done, remove the idli stand from the steamer and let it cool for a few minutes. Use a spoon or knife to carefully remove the idlis from the molds.
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Idli.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/zFZJPVSkiMI?si=soX_M9fLj0h2jkJj" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Biryani-rice</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Biryani is a popular and aromatic South Asian dish made with rice, a blend of spices, and usually some form of protein like chicken, lamb, beef, fish, or vegetables. The dish is known for its rich flavor, fragrant aroma, and beautiful layering of rice and meat or vegetables. Here's an overview of biryani rice, its ingredients, and the preparation steps:</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>For the rice:  <br> 2 cups basmati rice  <br> 4 cups water  <br> 1 bay leaf   <br>4-5 cloves   <br>2-3 green cardamom pods  <br>1 cinnamon stick <br> Salt to taste  <br>For the biryani masala: <br> 2 large onions, thinly sliced  <br>1 cup yogurt  <br>1 tablespoon ginger-garlic paste  <br>1 teaspoon turmeric powder  <br>2 teaspoons red chili powder  <br>2 teaspoons coriander powder <br>1 teaspoon cumin powder <br>1 teaspoon garam masala<br>Salt to taste<br>2 tablespoons cooking oil or ghee (clarified butter) <br>A pinch of saffron soaked in 2 tablespoons of warm milk (optional) <br>Fresh coriander and mint leaves, chopped </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Marinate the Protein (if using):
+                            In a bowl, mix the protein with yogurt, ginger-garlic paste, turmeric powder, red chili powder, and salt. Let it marinate for at least 30 minutes to 1 hour for better flavor.<br>2.Cook the Rice:Wash the basmati rice under cold water until the water runs clear. This removes excess starch and prevents the rice from clumping.Boil 4 cups of water in a pot. Add bay leaf, cloves, cardamom, cinnamon stick, and salt.
+                            Add the rice to the boiling water and cook until it is 70-80% cooked. Drain and set aside.<br>3. Prepare the Biryani Masala: Heat oil or ghee in a large, deep pan or pot. Add the sliced onions and sauté until golden brown. Remove half of the fried onions for garnishing later.Add the marinated protein to the pot and cook on medium heat until the meat is tender and oil begins to separate from the masala. Add coriander powder, cumin powder, garam masala, and salt. Cook for an additional 5-7 minutes. <br>4.Layering the Biryani:Spread half of the cooked rice evenly over the protein and masala mixture. Sprinkle half of the chopped coriander and mint leaves over it. Add the remaining rice on top and garnish with the reserved fried onions, more coriander and mint leaves, and the saffron milk (if using).<br>5.Final Steaming (Dum Cooking):Cover the pot with a tight-fitting lid or seal with aluminum foil to trap the steam. Cook on low heat for 20-25 minutes to allow theflavors to blend and the rice to absorb the aromas. This process is known as "dum cooking." <br>6.Serve: Gently fluff the biryani with a fork before serving to avoid breaking the rice grains. Serve hot with raita (yogurt dip), boiled eggs or salad. <br><br>Tips for Best Results: Use good quality basmati rice for long and fluffy grains. Marinate the protein overnight if possible, to enhance the depth of flavors. Layer carefully to keep the rice grains intact and separate. </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Biryani-rice.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/E_gWBBjYkjE?si=Kd6gXbU5SRuW3oVc" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chicken Burger</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Prepare the buns! For the ideal stuffing for juicy burgers, coat or marinate chicken thighs and breast. Dig it after adding toppings like slaw and sauce along with your selected side dishes.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 boneless chicken breasts (around half a kg) <br>1 tspn of pepper<br>1 tspn of salt<br>2 tblspns of worcestershire sauce <br>1 tspn of Mustard powder or all spice powder <br>2 tblspns of Flour <br>1 Egg <br>1 1/2 cups of Breadcrumbs <br>Soft seeded burger buns <br>Mayonnaise or KFC Zinger Sauce </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. If your chicken breasts are too big, slice them before cooking. Then, marinade the chicken breasts in the Worcestershire sauce, pepper, salt, mustard, or all-spice powder. Leave the chicken for at least four hours or over night.
+                            <br>2. An egg and two tablespoons of water should be beaten together to make the batter, which should then be set aside. <br>3. Chicken breasts that have been marinated should be heavily dusted in flour. They should be well coated after being dipped in both the egg and the breadcrumbs. <br>4. The coated chicken breasts should be deep-fried in heated oil over a medium-high heat until they are crisp and golden brown. <br>5. The finished burger should be stacked with the lettuce on top, followed by the chicken, and then the mayonnaise or KFC zinger sauce. The buns should be cut in half and lightly toasted. If you'd like a cheesy kick, add some sliced American cheese. </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Burger.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/td757uct" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">jalebi</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Jalebi is a popular Indian sweet known for its spiral shape, crispy texture, and delightful sweetness. It's commonly enjoyed during festivals and special occasions. Made with a fermented batter, jalebi is deep-fried and then soaked in sugar syrup, giving it a unique, juicy taste.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br> 1. For the Batter:  <br>1 cup all-purpose flour (maida)  <br>2 tablespoons cornstarch  <br>1/2 cup plain yogurt  <br>1/4 teaspoon baking soda (optional)  <br>Water as needed to make a thick batter  <br>A pinch of yellow or orange food coloring (optional) <br>2. For the Sugar Syrup: <br>1 cup sugar <br>1/2 cup water<br> 1/4 teaspoon saffron strands or 1/2 teaspoon cardamom powder <br>1/2 teaspoon lemon juice <br>3. For Frying: <br>Ghee or oil </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Prepare the Batter: In a mixing bowl, combine the all-purpose flour, cornstarch, and yogurt. Add water gradually to make a smooth, thick batter. Add the food coloring if desired. Cover the batter and let it ferment for 4-6 hours or overnight for a better flavor.<br>2. Make the Sugar Syrup: In a pan, add the sugar and water. Bring it to a boil while stirring to dissolve the sugar. Once it reaches a one-string consistency (slightly thick but not caramelized), add the saffron or cardamom powder and the lemon juice to prevent crystallization. Keep the syrup warm on low heat. <br>3.Fry the Jalebis: Heat ghee or oil in a deep pan over medium heat. Pour the batter into a squeeze bottle or piping bag with a small round tip. Squeeze the batter into the hot oil in circular motions to form spiral shapes. Fry until golden and crispy on both sides. <br>4.Soak in Sugar Syrup: Remove the fried jalebis from the oil and immediately dip them into the warm sugar syrup for 1-2 minutes. Ensure they are coated well, then transfer them to a plate.<br>4.Serve: Serve hot or at room temperature, often accompanied by rabri (thickened sweetened milk) for an extra indulgent treat.
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/jalebi.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/0w471_wMPP0?si=q6UwpIGKjN7EroPi" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Pav-Bhaji</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Pav Bhaji is a popular Indian street food that originated in Mumbai. It consists of a spicy mashed vegetable curry (bhaji) served with soft buttered bread rolls (pav). The dish is loved for its rich flavor and is enjoyed as a snack or a meal.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>For the Bhaji: <br> <br>1. Vegetables: <br>2 large potatoes, boiled and mashed <br>1 cup cauliflower, finely chopped <br>1 cup green peas  <br>1 large carrot, finely chopped <b></b> 1 green bell pepper, finely chopped <br>2.  Other Ingredients: <br> 2 large onions, finely chopped  <br>2 tomatoes, finely chopped  <br>2-3 green chilies,finely chopped <br>2 tbsp ginger-garlic paste <br>2 tbsp Pav Bhaji masala<br> 1 tsp cumin seeds <br>1/2 tsp turmeric powder  <br>1 tsp red chili powder (optional)  <br>Salt to taste  <br>2 tbsp butter (plus more for serving)  <br>1 tbsp oil <br>Fresh coriander leaves, chopped (for garnish) <br>Lemon wedges (for serving) <br>3.For the Pav: <br>4-6 pav buns <br>2 tbsp butter</p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Boil and Mash Vegetables: In a large pot, boil potatoes, cauliflower, green peas, and carrots until soft.
+                            Mash the boiled vegetables and set them aside.
+                            <br>2.Prepare the Bhaji:Heat oil and butter in a large pan over medium heat.Add cumin seeds and let them splutter.Add the chopped onions and sauté until they turn golden brown.Add the ginger-garlic paste and green chilies, and sauté for 1-2 minutes until the raw smell disappears Add the chopped tomatoes and cook until they become soft and the oil starts to separate.Add turmeric powder, Pav Bhaji masala, and red chili powder (optional). Stir well.Add the mashed vegetables and mix thoroughly.Add water as needed to achieve a slightly thick consistency. Cook for 5-10 minutes, stirring occasionally.Season with salt to taste.Garnish with chopped coriander leaves and a dollop of butter. <br>3.Toast the Pav: Heat a flat pan or tawa over medium heat. Slice the pav buns horizontally and spread butter on the inside. Place the buns on the pan and toast until golden brown. <br>4.Serving:
+                            Serve the bhaji in a bowl, topped with a small piece of butter. Serve with the buttered pav buns on the side. Garnish with lemon wedges and extra chopped coriander leaves for added flavor. Enjoy your delicious Pav Bhaji!
+                        </p>
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/Pav-Bhaji.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/sAnPUIvPc1I?si=1aOSWMzWZTcn0wnP" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">vada-pav</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Vada Pav is a popular street food originating from Mumbai, India. It is often referred to as the "Indian burger" due to its simple yet hearty structure. This snack is beloved for its spicy flavors, crispy textures, and comforting appeal. Vada Pav consists of a spicy potato filling (the vada) encased in a gram flour batter and deep-fried until golden and crispy. This is served inside a pav (soft bread roll) along with a variety of chutneys and a sprinkle of dry garlic chutney for an extra punch of flavor.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>For the Potato Filling (Vada):<br>3-4 medium-sized potatoes (boiled and mashed)
+                            <br>2-3 green chilies (finely chopped)<br>1 tsp mustard seeds<br>1/2 tsp turmeric powder<br>1/2 inch ginger (grated)
+                            <br>4-5 garlic cloves (crushed)<br>1 tbsp fresh coriander leaves (chopped)<br>Salt to taste<br>1 tbsp oil<br>For the Batter:<br>1 cup gram flour (besan)<br>1/4 tsp turmeric powder<br>A pinch of asafoetida (hing)<br>Salt to taste
+                            <br>Water (as needed for a smooth batter)<br>A pinch of baking soda (optional)<br>For Assembling:<br>8 pav buns<br>Green chutney (coriander and mint-based)<br>Tamarind chutney<br>Dry garlic chutney (optional)<br>Fried green chilies (optional)</p>
+                        <h3>Instruction:</h3>
+                        <p><br>Prepare the Potato Filling: Heat oil in a pan and add mustard seeds. Let them splutter.Add grated ginger, garlic, and green chilies. Sauté for a minute.Add turmeric powder and mix well.Add the mashed potatoes and salt, stirring until everything is well combined. Add chopped coriander leaves and mix again. Let the mixture cool and shape it into small, round patties.<br>Prepare the Batter: In a bowl, combine gram flour, turmeric powder, asafoetida, and salt.Gradually add water and whisk to make a smooth, lump-free batter.Add a pinch of baking soda for extra crispine(optional).<br> Fry the Vadas:Heat oil in a deep frying pan over medium heat.Dip the potato patties in the batter, ensuring they are fully coated.Carefully place them in the hot oil and fry until golden brown and crispy.Remove and drain on a paper towel to remove excess oil.<br> Assemble the Vada Pav:Slice the pav buns horizontally but not all the way through.Spread a layer of green chutney and tamarind chutney on the insides of the buns. Place a vada in the middle and sprinkle dry garlic chutney if desired. Serve with fried green chilies on the side for an authentic touch. <br>Serving Tips Vada Pav is best enjoyed fresh and hot with a cup of chai or a refreshing cold drink. The combination of soft pav, spicy and tangy chutneys, and crispy vada makes for an unforgettable experience!</p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "./img/vada-pav.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/C4pzmjHgqLw?si=ZSmJDlemDZE7Tq7f" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+            <!--Ending of Recipe Details-->
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.instagram.com/" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="https://github.com/" target="_blank" ><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024. All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="./assets/index.js"></script>
+</body>
+</html>
